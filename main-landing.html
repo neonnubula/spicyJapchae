@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Your Life One Day at a Time | Most Important Thing</title>
+    <meta name="description" content="Focus on what truly matters. Achieve your most important daily goal and watch your dreams become reality.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Transform Your Life One Day at a Time">
+    <meta property="og:description" content="Focus on what truly matters. The #1 app for achieving your most important daily goals.">
+    <meta property="og:image" content="images/og-image.jpg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">Most Important Thing</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#testimonials">Success Stories</a>
+                <a href="#pricing">Pricing</a>
+            </div>
+            <button class="btn-primary">Get Started</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <h1 class="hero-title">Transform Your Life<br>One Day at a Time</h1>
+                <p class="hero-subtitle">Focus on what truly matters. Achieve your most important daily goal and watch your dreams become reality.</p>
+                <div class="hero-cta">
+                    <button class="btn-primary btn-large">Start Your Transformation - $1</button>
+                    <button class="btn-secondary">Watch Demo</button>
+                </div>
+                <div class="hero-proof">
+                    <span>Join early adopters transforming their lives</span>
+                    <div class="rating">★★★★★ 4.9/5</div>
+                </div>
+            </div>
+            <div class="hero-visual animate-on-scroll">
+                <div class="app-mockup">
+                    <div class="phone-frame">
+                        <div class="app-screen-container">
+                            <!-- Light mode screenshot -->
+                            <img src="images/home-light-mode.png" alt="Most Important Thing App - Light Mode" class="app-screenshot active" id="light-mode">
+                            <!-- Dark mode screenshot -->
+                            <img src="images/home-dark-mode.png" alt="Most Important Thing App - Dark Mode" class="app-screenshot" id="dark-mode">
+                            <!-- Fallback for missing images -->
+                            <div class="app-screen fallback-screen">
+                                <div class="app-header">
+                                    <div class="app-title">Today's Focus</div>
+                                    <div class="streak">🔥 15 days</div>
+                                </div>
+                                <div class="goal-card">
+                                    <h3>Build landing page</h3>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                    <span class="progress-text">3 of 4 tasks complete</span>
+                                </div>
+                                <div class="daily-tasks">
+                                    <div class="task completed">✅ Design wireframes</div>
+                                    <div class="task completed">✅ Write copy</div>
+                                    <div class="task completed">✅ Build HTML structure</div>
+                                    <div class="task current">📝 Add styling</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Theme toggle button -->
+                        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-content animate-on-scroll">
+                <h2 class="section-title">You're Losing $274 Every Day You Don't Focus</h2>
+                <div class="problem-grid">
+                    <div class="problem-card card">
+                        <div class="problem-icon">🔄</div>
+                        <h3>Scattered Priorities</h3>
+                        <p>You have 20 "important" things on your todo list, but none of them move you toward your real goals.</p>
+                    </div>
+                    <div class="problem-card card">
+                        <div class="problem-icon">⏰</div>
+                        <h3>Busy But Not Productive</h3>
+                        <p>You're working hard every day but feel like you're running in place. Years pass without meaningful progress.</p>
+                    </div>
+                    <div class="problem-card card">
+                        <div class="problem-icon">💔</div>
+                        <h3>Dreams Feel Impossible</h3>
+                        <p>Your long-term goals seem so far away that you've stopped believing they're achievable.</p>
+                    </div>
+                    <div class="problem-card card">
+                        <div class="problem-icon">💸</div>
+                        <h3>Opportunity Cost</h3>
+                        <p>Every unfocused day costs you potential income, relationships, health, and happiness. The price of distraction is your future.</p>
+                    </div>
+                </div>
+                <div class="cost-calculator card">
+                    <h3>Calculate Your Daily Opportunity Cost</h3>
+                    <div class="calculator">
+                        <div class="calc-input">
+                            <label>Your desired annual income increase:</label>
+                            <input type="range" id="income-slider" min="10000" max="200000" value="100000" step="10000">
+                            <span id="income-display">$100,000</span>
+                        </div>
+                        <div class="calc-result">
+                            <span>Daily opportunity cost: </span>
+                            <span id="daily-cost" class="cost-amount">$274</span>
+                        </div>
+                        <p class="calc-note">Every day without focused progress toward your goals costs you this much in potential future earnings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="features" class="solution">
+        <div class="container">
+            <div class="solution-content animate-on-scroll">
+                <h2 class="section-title">One Goal. One Day. One Life Changed.</h2>
+                <p class="section-subtitle">Stop the chaos. Start the transformation. Focus on the single most important thing that moves you closer to your dreams.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Daily Priority Selection</h3>
+                        <p>Each morning, choose the ONE most important task that will move you closer to your long-term goal. No more scattered priorities.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Progress Tracking</h3>
+                        <p>Watch your progress unfold in real-time. See how each day's focus compounds into meaningful transformation.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon">🔗</div>
+                        <h3>Habit Stacking</h3>
+                        <p>Build unstoppable momentum by connecting your daily focus to your existing habits and routines.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon">💡</div>
+                        <h3>Achievement Insights</h3>
+                        <p>Understand your patterns, celebrate your wins, and optimize your approach for even better results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Section -->
+    <section class="transformation">
+        <div class="container">
+            <div class="transformation-content animate-on-scroll">
+                <h2 class="section-title">Your Journey: From Scattered to Focused</h2>
+                <div class="journey-timeline">
+                    <div class="timeline-item card">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>Day 1: Crystal Clear Clarity</h3>
+                            <p>You wake up knowing exactly what matters most today. No more decision fatigue or overwhelm.</p>
+                            <div class="timeline-visual">🌅</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item card">
+                        <div class="timeline-marker">7</div>
+                        <div class="timeline-content">
+                            <h3>Week 1: Momentum Building</h3>
+                            <p>You've completed 7 important tasks. You can feel the momentum building and see real progress.</p>
+                            <div class="timeline-visual">🚀</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item card">
+                        <div class="timeline-marker">30</div>
+                        <div class="timeline-content">
+                            <h3>Month 1: Visible Progress</h3>
+                            <p>Your goals aren't dreams anymore—they're projects with clear, measurable progress.</p>
+                            <div class="timeline-visual">📈</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item card">
+                        <div class="timeline-marker">365</div>
+                        <div class="timeline-content">
+                            <h3>Year 1: Life Transformed</h3>
+                            <p>You look back amazed at what focused daily action created. Your life is unrecognizable in the best way.</p>
+                            <div class="timeline-visual">🏆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Even the Creator Uses It Daily</h2>
+            <div class="founder-testimonial card animate-on-scroll">
+                <div class="testimonial-content">
+                    <div class="quote-icon">💭</div>
+                    <blockquote>
+                        "I built this app because I needed it myself. Every single day for the past 2 months, I've used my own prototype to focus on the most important task: building this app.
+                        
+                        Some days it was coding a new feature. Other days it was designing the user interface. Sometimes it was researching app store requirements or setting up testing.
+                        
+                        But every day, I knew exactly what mattered most. No scattered priorities, no busy work, just one clear focus that moved me closer to my goal.
+                        
+                        The result? A fully functional app that's now in Google Play testing and TestFlight, ready for the App Store and Play Store. This isn't theory—it's the real system I used to turn my idea into reality, one day at a time."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">— App Creator & Daily User</div>
+                            <div class="author-title">Building dreams, one day at a time</div>
+                        </div>
+                        <div class="author-avatar">
+                            <img src="images/founder-photo.jpg" alt="Founder" onerror="this.innerHTML='👨‍💻'; this.style.fontSize='1.5rem';">
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-proof">
+                    <div class="proof-metrics">
+                        <div class="metric">
+                            <span class="metric-number">60</span>
+                            <span class="metric-label">Days of consistent progress</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">1</span>
+                            <span class="metric-label">App built from idea to reality</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">2</span>
+                            <span class="metric-label">App stores ready for launch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="coming-soon-testimonials animate-on-scroll">
+                <p class="coming-soon-text">More testimonials coming soon from our beta testers...</p>
+                <div class="beta-tester-preview">
+                    <div class="tester-avatars">
+                        <div class="avatar placeholder">👤</div>
+                        <div class="avatar placeholder">👤</div>
+                        <div class="avatar placeholder">👤</div>
+                        <span class="more-count">+50 beta testers</span>
+                    </div>
+                    <p class="beta-text">Currently testing with real users who are already seeing amazing results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="pricing-content animate-on-scroll">
+                <h2 class="section-title">Transform Your Life for Less Than a Coffee</h2>
+                <div class="pricing-card card">
+                    <div class="price-header">
+                        <div class="price-badge">Launch Special</div>
+                        <div class="price-main">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">1</span>
+                            <span class="price-period">one-time</span>
+                        </div>
+                        <div class="price-comparison">
+                            <span class="original-price">Real value: $100</span>
+                            <span class="savings">You save $99</span>
+                        </div>
+                    </div>
+                    <div class="price-features">
+                        <div class="feature">✅ Lifetime access to the app</div>
+                        <div class="feature">✅ Daily goal tracking</div>
+                        <div class="feature">✅ Progress visualization</div>
+                        <div class="feature">✅ Achievement insights</div>
+                        <div class="feature">✅ All future updates</div>
+                        <div class="feature">✅ 30-day money-back guarantee</div>
+                    </div>
+                    <button class="btn-primary btn-large btn-full">Start Your Transformation - $1</button>
+                    <div class="price-guarantee">
+                        <span class="guarantee-icon">🛡️</span>
+                        <span>30-day money-back guarantee. If you don't see progress in your first month, get a full refund.</span>
+                    </div>
+                </div>
+                <div class="price-comparison-section">
+                    <h3>Compare the Cost</h3>
+                    <div class="comparison-grid">
+                        <div class="comparison-item">
+                            <span class="comparison-service">Life Coach</span>
+                            <span class="comparison-cost">$200/session</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="comparison-service">Productivity Course</span>
+                            <span class="comparison-cost">$497</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="comparison-service">Coffee (30 days)</span>
+                            <span class="comparison-cost">$150</span>
+                        </div>
+                        <div class="comparison-item highlight">
+                            <span class="comparison-service">FocusOne (Lifetime)</span>
+                            <span class="comparison-cost">$1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="faq-content animate-on-scroll">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item card">
+                        <h3>Is this just another productivity app?</h3>
+                        <p>No. Most productivity apps overwhelm you with features and complex systems. FocusOne does one thing perfectly: helps you identify and complete the single most important task each day toward your long-term goals.</p>
+                    </div>
+                    <div class="faq-item card">
+                        <h3>How is this different from todo lists?</h3>
+                        <p>Todo lists encourage you to do more things. FocusOne encourages you to do the RIGHT thing. It's about quality over quantity, focus over chaos, and progress over busy work.</p>
+                    </div>
+                    <div class="faq-item card">
+                        <h3>What if I miss a day?</h3>
+                        <p>Life happens. The app celebrates your progress without guilt or shame. Missing one day doesn't break your momentum—it's about the pattern, not perfection.</p>
+                    </div>
+                    <div class="faq-item card">
+                        <h3>How long before I see results?</h3>
+                        <p>Most users feel more focused and purposeful from day one. Visible progress toward your goals typically appears within 2-3 weeks of consistent daily focus.</p>
+                    </div>
+                    <div class="faq-item card">
+                        <h3>Why only $1?</h3>
+                        <p>This is our launch price to get the app in as many hands as possible and gather real user feedback. The price will increase as we add more features and proven results.</p>
+                    </div>
+                    <div class="faq-item card">
+                        <h3>What about the money-back guarantee?</h3>
+                        <p>If you don't feel more focused and see progress toward your goals within 30 days, we'll refund your dollar, no questions asked. We're that confident in the system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Your Future Self is Waiting</h2>
+                <p>Every day you wait is another day of scattered priorities and missed opportunities. Start your transformation today.</p>
+                <button class="btn-primary btn-large">Transform Your Life - $1</button>
+                <p class="cta-subtext">Join early adopters who've already started their journey</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class=footer-logo">Most Important Thing</div>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#twitter">Twitter</a>
+                    <a href="#instagram">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Most Important Thing. Transform your life, one day at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/animations.js"></script>
+</body>
+</html> 

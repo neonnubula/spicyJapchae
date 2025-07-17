@@ -685,8 +685,8 @@ blockquote {
 /* Theme Toggle Button */
 .theme-toggle {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
+    bottom: 20px;
+    right: 20px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
