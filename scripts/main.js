@@ -317,11 +317,54 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+// Theme toggle for app screenshots
+function toggleTheme() {
+    const lightMode = document.getElementById('light-mode');
+    const darkMode = document.getElementById('dark-mode');
+    const toggleBtn = document.querySelector('.theme-toggle');
+    
+    if (lightMode.classList.contains('active')) {
+        lightMode.classList.remove('active');
+        darkMode.classList.add('active');
+        toggleBtn.textContent = '☀️';
+    } else {
+        darkMode.classList.remove('active');
+        lightMode.classList.add('active');
+        toggleBtn.textContent = '🌙';
+    }
+}
+
+// Initialize fallback screen if images fail to load
+document.addEventListener('DOMContentLoaded', function() {
+    const screenshots = document.querySelectorAll('.app-screenshot');
+    const fallbackScreen = document.querySelector('.fallback-screen');
+    let imagesLoaded = 0;
+    let imagesErrored = 0;
+    
+    screenshots.forEach(img => {
+        img.addEventListener('load', () => {
+            imagesLoaded++;
+        });
+        
+        img.addEventListener('error', () => {
+            imagesErrored++;
+            img.style.display = 'none';
+            
+            // If all images failed, show fallback
+            if (imagesErrored === screenshots.length) {
+                fallbackScreen.style.opacity = '1';
+                document.querySelector('.theme-toggle').style.display = 'none';
+            }
+        });
+    });
+});
+
 // Export functions for testing
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         validateEmail,
         trackEvent,
-        getSection
+        getSection,
+        toggleTheme
     };
 } 

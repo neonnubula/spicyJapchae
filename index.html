@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transform Your Life One Day at a Time | FocusOne</title>
+    <title>Transform Your Life One Day at a Time | Most Important Thing</title>
     <meta name="description" content="Focus on what truly matters. Achieve your most important daily goal and watch your dreams become reality.">
     
     <!-- Open Graph Meta Tags -->
@@ -20,7 +20,7 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <div class="nav-logo">FocusOne</div>
+            <div class="nav-logo">MIT</div>
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#testimonials">Success Stories</a>
@@ -42,32 +42,41 @@
                     <button class="btn-secondary">Watch Demo</button>
                 </div>
                 <div class="hero-proof">
-                    <span>Join 10,000+ goal achievers</span>
+                    <span>Join early adopters transforming their lives</span>
                     <div class="rating">★★★★★ 4.9/5</div>
                 </div>
             </div>
             <div class="hero-visual animate-on-scroll">
                 <div class="app-mockup">
                     <div class="phone-frame">
-                        <div class="app-screen">
-                            <div class="app-header">
-                                <div class="app-title">Today's Focus</div>
-                                <div class="streak">🔥 15 days</div>
-                            </div>
-                            <div class="goal-card">
-                                <h3>Build landing page</h3>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 75%"></div>
+                        <div class="app-screen-container">
+                            <!-- Light mode screenshot -->
+                            <img src="images/home-light-mode.png" alt="Most Important Thing App - Light Mode" class="app-screenshot active" id="light-mode">
+                            <!-- Dark mode screenshot -->
+                            <img src="images/home-dark-mode.png" alt="Most Important Thing App - Dark Mode" class="app-screenshot" id="dark-mode">
+                            <!-- Fallback for missing images -->
+                            <div class="app-screen fallback-screen">
+                                <div class="app-header">
+                                    <div class="app-title">Today's Focus</div>
+                                    <div class="streak">🔥 15 days</div>
                                 </div>
-                                <span class="progress-text">3 of 4 tasks complete</span>
-                            </div>
-                            <div class="daily-tasks">
-                                <div class="task completed">✅ Design wireframes</div>
-                                <div class="task completed">✅ Write copy</div>
-                                <div class="task completed">✅ Build HTML structure</div>
-                                <div class="task current">📝 Add styling</div>
+                                <div class="goal-card">
+                                    <h3>Build landing page</h3>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                    <span class="progress-text">3 of 4 tasks complete</span>
+                                </div>
+                                <div class="daily-tasks">
+                                    <div class="task completed">✅ Design wireframes</div>
+                                    <div class="task completed">✅ Write copy</div>
+                                    <div class="task completed">✅ Build HTML structure</div>
+                                    <div class="task current">📝 Add styling</div>
+                                </div>
                             </div>
                         </div>
+                        <!-- Theme toggle button -->
+                        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
                     </div>
                 </div>
             </div>
@@ -204,7 +213,7 @@
                 <div class="testimonial-content">
                     <div class="quote-icon">💭</div>
                     <blockquote>
-                        "I built this app because I needed it myself. Every single day for the past 6 months, I've used my own prototype to focus on the most important task: building this app.
+                        "I built this app because I needed it myself. Every single day for the past 2 months, I've used my own prototype to focus on the most important task: building this app.
                         
                         Some days it was coding a new feature. Other days it was designing the user interface. Sometimes it was researching app store requirements or setting up testing.
                         
@@ -218,14 +227,14 @@
                             <div class="author-title">Building dreams, one day at a time</div>
                         </div>
                         <div class="author-avatar">
-                            👨‍💻
+                            <img src="images/founder-photo.jpg" alt="Founder" onerror="this.innerHTML='👨‍💻'; this.style.fontSize='1.5rem';">
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-proof">
                     <div class="proof-metrics">
                         <div class="metric">
-                            <span class="metric-number">180</span>
+                            <span class="metric-number">60</span>
                             <span class="metric-label">Days of consistent progress</span>
                         </div>
                         <div class="metric">
@@ -354,7 +363,7 @@
                 <h2>Your Future Self is Waiting</h2>
                 <p>Every day you wait is another day of scattered priorities and missed opportunities. Start your transformation today.</p>
                 <button class="btn-primary btn-large">Transform Your Life - $1</button>
-                <p class="cta-subtext">Join 10,000+ people who've already started their journey</p>
+                <p class="cta-subtext">Join early adopters who've already started their journey</p>
             </div>
         </div>
     </section>
@@ -363,7 +372,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">FocusOne</div>
+                <div class="footer-logo">MIT</div>
                 <div class="footer-links">
                     <a href="#privacy">Privacy Policy</a>
                     <a href="#terms">Terms of Service</a>
@@ -375,7 +384,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 FocusOne. Transform your life, one day at a time.</p>
+                <p>&copy; 2024 Most Important Thing. Transform your life, one day at a time.</p>
             </div>
         </div>
     </footer>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Most Important Thing - Beta Testing | MIT</title>
+    <meta name="description" content="Get early access to the Most Important Thing app. Transform your life one day at a time. Now in beta testing!">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Try Most Important Thing - Beta Testing">
+    <meta property="og:description" content="Get early access to the app that's transforming lives. Focus on what matters most.">
+    <meta property="og:image" content="images/og-image.jpg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">MIT</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#testing">Beta Testing</a>
+                <a href="#testimonials">Success Stories</a>
+            </div>
+            <button class="btn-primary">Try Free Beta</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <div class="beta-badge">
+                    <span class="beta-text">🧪 Now in Beta Testing</span>
+                </div>
+                <h1 class="hero-title">Transform Your Life<br>One Day at a Time</h1>
+                <p class="hero-subtitle">Join our exclusive beta and be among the first to experience the app that helps you focus on what truly matters. <strong>Free during testing!</strong></p>
+                <div class="hero-cta">
+                    <button class="btn-primary btn-large">🍎 Join TestFlight Beta</button>
+                    <button class="btn-secondary">🤖 Request Android Access</button>
+                </div>
+                <div class="hero-proof">
+                    <span>✨ Free beta testing • Early access • Shape the future</span>
+                    <div class="rating">★★★★★ 4.9/5 from testers</div>
+                </div>
+            </div>
+            <div class="hero-visual animate-on-scroll">
+                <div class="app-mockup">
+                    <div class="phone-frame">
+                        <div class="app-screen-container">
+                            <!-- Light mode screenshot -->
+                            <img src="images/home-light-mode.png" alt="Most Important Thing App - Light Mode" class="app-screenshot active" id="light-mode">
+                            <!-- Dark mode screenshot -->
+                            <img src="images/home-dark-mode.png" alt="Most Important Thing App - Dark Mode" class="app-screenshot" id="dark-mode">
+                            <!-- Fallback for missing images -->
+                            <div class="app-screen fallback-screen">
+                                <div class="beta-overlay">BETA</div>
+                                <div class="app-header">
+                                    <div class="app-title">Today's Focus</div>
+                                    <div class="streak">🔥 15 days</div>
+                                </div>
+                                <div class="goal-card">
+                                    <h3>Launch beta testing</h3>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 90%"></div>
+                                    </div>
+                                    <span class="progress-text">Almost ready!</span>
+                                </div>
+                                <div class="daily-tasks">
+                                    <div class="task completed">✅ Build core features</div>
+                                    <div class="task completed">✅ Design beautiful UI</div>
+                                    <div class="task completed">✅ Test with founder</div>
+                                    <div class="task current">🧪 Beta testing</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Theme toggle button -->
+                        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beta Testing Section -->
+    <section id="testing" class="beta-testing">
+        <div class="container">
+            <div class="beta-content animate-on-scroll">
+                <h2 class="section-title">🧪 Join the Beta Testing</h2>
+                <p class="section-subtitle">Be part of shaping the future of productivity. Get free access and help us build something amazing together.</p>
+                
+                <div class="testing-options">
+                    <!-- TestFlight Option -->
+                    <div class="testing-card card">
+                        <div class="platform-icon">🍎</div>
+                        <h3>iOS TestFlight Beta</h3>
+                        <p>Get instant access through Apple's TestFlight. Install, test, and provide feedback directly through the app.</p>
+                        <div class="features-list">
+                            <div class="feature">✅ Instant access</div>
+                            <div class="feature">✅ Automatic updates</div>
+                            <div class="feature">✅ Built-in feedback</div>
+                            <div class="feature">✅ iOS 14+ compatible</div>
+                        </div>
+                        <button class="btn-primary btn-large testflight-btn">
+                            <img src="images/testflight-icon.png" alt="TestFlight" class="btn-icon" onerror="this.style.display='none';">
+                            Join TestFlight Beta
+                        </button>
+                        <p class="testing-note">Limited to 10,000 testers</p>
+                    </div>
+
+                    <!-- Android Option -->
+                    <div class="testing-card card">
+                        <div class="platform-icon">🤖</div>
+                        <h3>Android Beta Access</h3>
+                        <p>Request access to our Android beta. We'll personally add you to our testing group and send you the download link.</p>
+                        <div class="features-list">
+                            <div class="feature">✅ Personal invitation</div>
+                            <div class="feature">✅ Direct support</div>
+                            <div class="feature">✅ Early feedback loop</div>
+                            <div class="feature">✅ Android 8+ compatible</div>
+                        </div>
+                        <div class="email-signup">
+                            <input type="email" id="android-email" placeholder="your@email.com" class="email-input">
+                            <button class="btn-primary btn-large android-btn" onclick="requestAndroidAccess()">
+                                <img src="images/android-icon.png" alt="Android" class="btn-icon" onerror="this.style.display='none';">
+                                Request Android Access
+                            </button>
+                        </div>
+                        <p class="testing-note">We'll email you within 24 hours</p>
+                    </div>
+                </div>
+
+                <!-- Why Beta Test Section -->
+                <div class="why-beta animate-on-scroll">
+                    <h3>Why Join Our Beta?</h3>
+                    <div class="beta-benefits">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🎯</div>
+                            <h4>Free Access</h4>
+                            <p>Use the full app completely free during beta testing</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🏗️</div>
+                            <h4>Shape the Product</h4>
+                            <p>Your feedback directly influences new features and improvements</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">⚡</div>
+                            <h4>Early Access</h4>
+                            <p>Be first to use new features before they launch publicly</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🎁</div>
+                            <h4>Special Pricing</h4>
+                            <p>Lock in exclusive pricing when we launch publicly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="features" class="solution">
+        <div class="container">
+            <div class="solution-content animate-on-scroll">
+                <h2 class="section-title">One Goal. One Day. One Life Changed.</h2>
+                <p class="section-subtitle">Stop the chaos. Start the transformation. Focus on the single most important thing that moves you closer to your dreams.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Daily Priority Selection</h3>
+                        <p>Each morning, choose the ONE most important task that will move you closer to your long-term goal. No more scattered priorities.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Progress Tracking</h3>
+                        <p>Watch your progress unfold in real-time. See how each day's focus compounds into meaningful transformation.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon">🔗</div>
+                        <h3>Habit Stacking</h3>
+                        <p>Build unstoppable momentum by connecting your daily focus to your existing habits and routines.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon">💡</div>
+                        <h3>Achievement Insights</h3>
+                        <p>Understand your patterns, celebrate your wins, and optimize your approach for even better results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Even the Creator Uses It Daily</h2>
+            <div class="founder-testimonial card animate-on-scroll">
+                <div class="testimonial-content">
+                    <div class="quote-icon">💭</div>
+                    <blockquote>
+                        "I built this app because I needed it myself. Every single day for the past 2 months, I've used my own prototype to focus on the most important task: building this app.
+                        
+                        Some days it was coding a new feature. Other days it was designing the user interface. Sometimes it was researching app store requirements or setting up testing.
+                        
+                        But every day, I knew exactly what mattered most. No scattered priorities, no busy work, just one clear focus that moved me closer to my goal.
+                        
+                        The result? A fully functional app that's now ready for beta testing. This isn't theory—it's the real system I used to turn my idea into reality, one day at a time."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">— App Creator & Daily User</div>
+                            <div class="author-title">Building dreams, one day at a time</div>
+                        </div>
+                        <div class="author-avatar">
+                            <img src="images/founder-photo.jpg" alt="Founder" onerror="this.innerHTML='👨‍💻'; this.style.fontSize='1.5rem';">
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-proof">
+                    <div class="proof-metrics">
+                        <div class="metric">
+                            <span class="metric-number">60</span>
+                            <span class="metric-label">Days of consistent progress</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">1</span>
+                            <span class="metric-label">App built from idea to beta</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">2</span>
+                            <span class="metric-label">Platforms ready for testing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beta-testimonials animate-on-scroll">
+                <p class="beta-testers-text">Join our growing community of beta testers...</p>
+                <div class="beta-tester-preview">
+                    <div class="tester-avatars">
+                        <div class="avatar placeholder">👤</div>
+                        <div class="avatar placeholder">👤</div>
+                        <div class="avatar placeholder">👤</div>
+                        <span class="more-count">+50 beta testers</span>
+                    </div>
+                    <p class="beta-text">Currently testing and already seeing amazing results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Ready to Transform Your Life?</h2>
+                <p>Join our exclusive beta testing community and be among the first to experience focused productivity.</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary btn-large">🍎 Join TestFlight Beta</button>
+                    <button class="btn-secondary btn-large">🤖 Request Android Access</button>
+                </div>
+                <p class="cta-subtext">Free during beta • Limited spots available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">MIT</div>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="mailto:neonnubula@proton.me">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#twitter">Twitter</a>
+                    <a href="#instagram">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Most Important Thing. Transform your life, one day at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/animations.js"></script>
+    <script>
+        // TestFlight button functionality
+        document.querySelector('.testflight-btn').addEventListener('click', function() {
+            // Replace with your actual TestFlight link
+            window.open('https://testflight.apple.com/join/your-testflight-link', '_blank');
+        });
+
+        // Additional CTA buttons
+        document.querySelectorAll('.final-cta .btn-primary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                window.open('https://testflight.apple.com/join/your-testflight-link', '_blank');
+            });
+        });
+
+        document.querySelectorAll('.final-cta .btn-secondary, .hero-cta .btn-secondary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.getElementById('android-email').focus();
+                document.getElementById('android-email').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Android access request function
+        function requestAndroidAccess() {
+            const email = document.getElementById('android-email').value;
+            
+            if (!email || !validateEmail(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            // Create mailto link
+            const subject = 'Android Beta Testing Request - Most Important Thing App';
+            const body = `Hi there,
+
+I'd like to request access to the Android beta testing for the Most Important Thing app.
+
+My email: ${email}
+
+Looking forward to trying the app and providing feedback!
+
+Best regards`;
+
+            const mailtoLink = `mailto:neonnubula@proton.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            window.location.href = mailtoLink;
+            
+            // Show confirmation
+            document.querySelector('.android-btn').innerHTML = '✅ Request Sent!';
+            document.querySelector('.android-btn').disabled = true;
+            
+            setTimeout(() => {
+                document.querySelector('.android-btn').innerHTML = '🤖 Request Android Access';
+                document.querySelector('.android-btn').disabled = false;
+            }, 3000);
+        }
+    </script>
+</body>
+</html> 

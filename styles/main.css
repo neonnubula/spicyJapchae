@@ -368,6 +368,47 @@ p {
     border-radius: 2px;
 }
 
+.app-screen-container {
+    position: relative;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.app-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.app-screenshot.active {
+    opacity: 1;
+}
+
+.app-screenshot:error {
+    display: none;
+}
+
+.fallback-screen {
+    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 30px;
+    height: 100%;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+}
+
 .app-screen {
     background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
     border-radius: 30px;
@@ -474,6 +515,10 @@ p {
     }
     
     .app-screen {
+        padding: 20px 15px;
+    }
+    
+    .fallback-screen {
         padding: 20px 15px;
     }
 }
