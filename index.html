@@ -411,7 +411,7 @@
         // Show/hide scroll to top button
         function updateScrollToTop() {
             const scrollBtn = document.getElementById('scroll-to-top');
-            if (window.pageYOffset > 300) {
+            if (window.innerWidth <= 768 && window.pageYOffset > 300) {
                 scrollBtn.style.display = 'block';
             } else {
                 scrollBtn.style.display = 'none';
