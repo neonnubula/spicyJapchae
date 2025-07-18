@@ -826,7 +826,7 @@ section {
     background: white;
     padding: 1rem;
     box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 999;
     border-top: 1px solid #e2e8f0;
     display: none;
 }
@@ -867,6 +867,40 @@ section {
     white-space: nowrap;
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 90px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
 }
 
 /* Add bottom padding to body to account for sticky CTA */

@@ -38,9 +38,7 @@
         <div class="hero-background"></div>
         <div class="container">
             <div class="hero-content animate-on-scroll">
-                <div class="beta-badge">
-                    <span class="beta-text">🧪 Now in Beta Testing</span>
-                </div>
+
                 <h1 class="hero-title">Transform Your Life<br>One Day at a Time</h1>
                 <p class="hero-subtitle">Focus on what truly matters. Join 50+ beta testers already seeing results.</p>
                 
@@ -137,6 +135,11 @@
             <button class="btn-primary btn-large" onclick="showPlatformSelection()">Join Now</button>
         </div>
     </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top" onclick="scrollToTop()">
+        ↑
+    </button>
 
     <!-- Beta Testing Section -->
     <section id="testing" class="beta-testing">
@@ -326,11 +329,11 @@
                     <a href="mailto:neonnubula@proton.me">Contact</a>
                 </div>
                 <div class="footer-social">
-                    <a href="#twitter">Twitter</a>
+                    <a href="#x">X</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Most Important Thing. Transform your life, one day at a time.</p>
+                <p>&copy; 2025 Most Important Thing. Transform your life, one day at a time.</p>
             </div>
         </div>
     </footer>
@@ -396,6 +399,30 @@
         
         // Initialize sticky CTA
         updateStickyCTA();
+        
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Show/hide scroll to top button
+        function updateScrollToTop() {
+            const scrollBtn = document.getElementById('scroll-to-top');
+            if (window.pageYOffset > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        }
+        
+        // Listen for scroll events for scroll-to-top button
+        window.addEventListener('scroll', updateScrollToTop);
+        
+        // Initialize scroll-to-top button
+        updateScrollToTop();
         
         // TestFlight button functionality (legacy)
         const testflightBtn = document.querySelector('.testflight-btn');
