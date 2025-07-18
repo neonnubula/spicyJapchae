@@ -117,7 +117,7 @@
                     </div>
                 </button>
                 <button class="platform-option android-option" onclick="requestAndroidAccess()">
-                    <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="platform-icon-img">
+                    <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="platform-icon-img" onerror="this.style.display='none'">
                     <div class="platform-info">
                         <h4>Get it on Google Play</h4>
                         <p>Personal invitation • Direct support</p>
@@ -134,7 +134,7 @@
                 <span class="sticky-title">Get Free Early Access</span>
                 <span class="sticky-subtitle">Only 47 spots left</span>
             </div>
-            <button class="btn-primary btn-large" onclick="showPlatformSelection()">Join Now</button>
+            <button class="btn-primary btn-large" onclick="showPlatformSelection()">Get Early Access</button>
         </div>
     </div>
 
@@ -173,12 +173,12 @@
                     <!-- Google Play Store Option -->
                     <div class="testing-card card">
                         <a href="google-play-instructions.html" style="display:block;text-align:center;">
-                            <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" style="max-width:220px;width:100%;height:auto;display:inline-block;">
+                            <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" style="max-width:220px;width:100%;height:auto;display:inline-block;" onerror="this.style.display='none'">
                         </a>
                         <p style="margin-top:1rem;">Request access to our Google Play Store version. We'll personally add you to our testing group and send you the download link.</p>
                         <div class="email-signup">
                             <input type="email" id="android-email" placeholder="your@email.com" class="email-input">
-                            <button class="btn-primary btn-large android-btn" onclick="window.location.href='google-play-instructions.html'">
+                            <button class="btn-primary btn-large android-btn" onclick="requestAndroidAccessEmail()">
                                 Request Access
                             </button>
                         </div>
@@ -311,7 +311,7 @@
                 <h2>Ready to Transform Your Life?</h2>
                 <p>Join our exclusive early access community and be among the first to experience focused productivity.</p>
                 <div class="cta-buttons">
-                    <button class="btn-primary btn-large">
+                    <button class="btn-primary btn-large" onclick="joinTestFlight()">
                         Join iOS TestFlight
                     </button>
                     <button class="btn-secondary btn-large" onclick="window.location.href='google-play-instructions.html'">
@@ -377,11 +377,8 @@
         
         function requestAndroidAccess() {
             hidePlatformSelection();
-            // Scroll to Android section or show email input
-            const androidSection = document.querySelector('.android-option');
-            if (androidSection) {
-                androidSection.scrollIntoView({ behavior: 'smooth' });
-            }
+            // Navigate to Google Play instructions
+            window.location.href = 'google-play-instructions.html';
         }
         
         // Sticky CTA visibility
@@ -432,7 +429,7 @@
         // Initialize scroll-to-top button
         updateScrollToTop();
         
-        // iOS TestFlight button functionality (legacy)
+        // iOS TestFlight button functionality
         const testflightBtn = document.querySelector('.testflight-btn');
         if (testflightBtn) {
             testflightBtn.addEventListener('click', function() {
@@ -448,18 +445,14 @@
             });
         });
 
-        document.querySelectorAll('.final-cta .btn-secondary, .hero-cta .btn-secondary').forEach(btn => {
+        document.querySelectorAll('.final-cta .btn-secondary').forEach(btn => {
             btn.addEventListener('click', function() {
-                const androidEmail = document.getElementById('android-email');
-                if (androidEmail) {
-                    androidEmail.focus();
-                    androidEmail.scrollIntoView({ behavior: 'smooth' });
-                }
+                window.location.href = 'google-play-instructions.html';
             });
         });
 
-        // Android access request function
-        function requestAndroidAccess() {
+        // Android access request function (email version)
+        function requestAndroidAccessEmail() {
             const email = document.getElementById('android-email');
             if (!email) return;
             
@@ -493,7 +486,7 @@ Best regards`;
                 androidBtn.disabled = true;
                 
                 setTimeout(() => {
-                    androidBtn.innerHTML = '<img src="images/getitongoogleplay-icon.svg" alt="Google Play Store" class="btn-icon">Request Google Play Access';
+                    androidBtn.innerHTML = 'Request Access';
                     androidBtn.disabled = false;
                 }, 3000);
             }
@@ -504,6 +497,12 @@ Best regards`;
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(email);
         }
+        
+        // Initialize page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure all event listeners are properly attached
+            console.log('Page loaded successfully');
+        });
         
         // Mobile-specific optimizations
         if (window.innerWidth <= 768) {
