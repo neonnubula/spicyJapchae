@@ -174,19 +174,14 @@
 
                     <!-- Google Play Store Option -->
                     <div class="testing-card card">
-                        <img src="images/getitongoogleplay-icon.svg" alt="Google Play Store" class="platform-icon-img">
-                        <h3>Google Play Store Access</h3>
-                        <p>Request access to our Google Play Store version. We'll personally add you to our testing group and send you the download link.</p>
-                        <div class="features-list">
-                            <div class="feature">✅ Personal invitation</div>
-                            <div class="feature">✅ Direct support</div>
-                            <div class="feature">✅ Android 8+ compatible</div>
-                        </div>
+                        <a href="google-play-instructions.html" style="display:block;text-align:center;">
+                            <img src="images/getitongoogleplay-icon.png" alt="Get it on Google Play" style="max-width:220px;width:100%;height:auto;display:inline-block;">
+                        </a>
+                        <p style="margin-top:1rem;">Request access to our Google Play Store version. We'll personally add you to our testing group and send you the download link.</p>
                         <div class="email-signup">
                             <input type="email" id="android-email" placeholder="your@email.com" class="email-input">
-                            <button class="btn-primary btn-large android-btn" onclick="requestAndroidAccess()">
-                                <img src="images/getitongoogleplay-icon.svg" alt="Google Play Store" class="btn-icon">
-                                Request Google Play Access
+                            <button class="btn-primary btn-large android-btn" onclick="window.location.href='google-play-instructions.html'">
+                                <img src="images/getitongoogleplay-icon.png" alt="Get it on Google Play" class="btn-icon" style="width:120px;height:auto;margin:0;">
                             </button>
                         </div>
                         <p class="testing-note">We'll email you within 24 hours</p>
@@ -320,10 +315,9 @@
                         <img src="images/testflight-icon.webp" alt="iOS TestFlight" class="btn-icon">
                         Join iOS TestFlight
                     </button>
-                    <button class="btn-secondary btn-large">
-                        <img src="images/getitongoogleplay-icon.svg" alt="Google Play Store" class="btn-icon">
-                        Request Google Play Access
-                    </button>
+                    <a href="google-play-instructions.html" class="btn-secondary btn-large" style="padding:0;background:none;border:none;box-shadow:none;">
+                        <img src="images/getitongoogleplay-icon.png" alt="Get it on Google Play" style="max-width:160px;width:100%;height:auto;display:inline-block;vertical-align:middle;">
+                    </a>
                 </div>
                 <p class="cta-subtext">Free during early access • Limited spots available</p>
             </div>
