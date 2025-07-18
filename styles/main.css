@@ -302,12 +302,12 @@ p {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding-top: 50px;
+    padding-top: 80px;
 }
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: 40px;
+        padding-top: 70px;
     }
 }
 
@@ -629,8 +629,9 @@ section {
     
     .hero-title {
         font-size: 2.2rem;
-        line-height: 1.1;
+        line-height: 1.2;
         margin-bottom: 0.75rem;
+        margin-top: 1rem;
     }
     
     .hero-subtitle {
