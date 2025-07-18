@@ -232,50 +232,8 @@ function showExitIntentPopup() {
     });
 }
 
-// Scroll to top button
-function initScrollToTop() {
-    const scrollButton = document.createElement('button');
-    scrollButton.innerHTML = '↑';
-    scrollButton.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        color: white;
-        border: none;
-        font-size: 20px;
-        cursor: pointer;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-        z-index: 1000;
-    `;
-
-    document.body.appendChild(scrollButton);
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            scrollButton.style.opacity = '1';
-            scrollButton.style.transform = 'translateY(0)';
-        } else {
-            scrollButton.style.opacity = '0';
-            scrollButton.style.transform = 'translateY(20px)';
-        }
-    });
-
-    scrollButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-// Initialize scroll to top button
-document.addEventListener('DOMContentLoaded', initScrollToTop);
+// Scroll to top button functionality is handled in index.html
+// Removed duplicate scroll-to-top button creation to avoid conflicts
 
 // Performance monitoring
 function initPerformanceMonitoring() {
