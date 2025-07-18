@@ -260,6 +260,17 @@
     background: rgba(255, 255, 255, 0.15);
     border-left: 4px solid rgba(255, 255, 255, 0.3);
     position: relative;
+    transition: all 0.3s ease;
+}
+
+.founder-testimonial:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-left-color: rgba(255, 255, 255, 0.5);
+}
+
+.founder-testimonial:hover blockquote,
+.founder-testimonial:hover blockquote p {
+    color: white;
 }
 
 .testimonial-content {
@@ -282,6 +293,15 @@ blockquote {
     margin: 0 0 2rem 0;
     font-style: italic;
     color: white;
+}
+
+blockquote p {
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
 }
 
 .testimonial-author {
