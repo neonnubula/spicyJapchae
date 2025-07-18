@@ -670,9 +670,19 @@ blockquote {
 }
 
 .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     font-size: 1.5rem;
     font-weight: 800;
     color: white;
+}
+
+.footer-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 .footer-links {
