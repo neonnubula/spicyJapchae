@@ -846,6 +846,38 @@ blockquote {
     display: block;
 }
 
+.platform-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.platform-icon-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.platform-icon-img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .platform-icons {
+        gap: 0.75rem;
+    }
+    
+    .platform-icon-img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
 .testing-card h3 {
     margin-bottom: var(--spacing-sm);
     color: var(--text-primary);
