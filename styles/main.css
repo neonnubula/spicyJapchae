@@ -816,6 +816,19 @@ section {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Special handling for Google Play icon (horizontal) */
+.platform-option .platform-icon-img[src*="getitongoogleplay"] {
+    width: 60px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.btn-icon[src*="getitongoogleplay"] {
+    width: 24px;
+    height: 12px;
+    object-fit: contain;
+}
+
 .platform-info h4 {
     margin: 0 0 0.25rem 0;
     color: var(--text-primary);

@@ -118,7 +118,7 @@
                     </div>
                 </button>
                 <button class="platform-option android-option" onclick="requestAndroidAccess()">
-                    <div class="platform-icon">🤖</div>
+                    <img src="images/getitongoogleplay-icon.svg" alt="Google Play Store" class="platform-icon-img">
                     <div class="platform-info">
                         <h4>Google Play Store</h4>
                         <p>Personal invitation • Direct support</p>
@@ -174,7 +174,7 @@
 
                     <!-- Google Play Store Option -->
                     <div class="testing-card card">
-                        <div class="platform-icon">🤖</div>
+                        <img src="images/getitongoogleplay-icon.svg" alt="Google Play Store" class="platform-icon-img">
                         <h3>Google Play Store Access</h3>
                         <p>Request access to our Google Play Store version. We'll personally add you to our testing group and send you the download link.</p>
                         <div class="features-list">
@@ -185,7 +185,7 @@
                         <div class="email-signup">
                             <input type="email" id="android-email" placeholder="your@email.com" class="email-input">
                             <button class="btn-primary btn-large android-btn" onclick="requestAndroidAccess()">
-                                <img src="images/android-icon.png" alt="Android" class="btn-icon">
+                                <img src="images/getitongoogleplay-icon.svg" alt="Google Play Store" class="btn-icon">
                                 Request Google Play Access
                             </button>
                         </div>
@@ -320,7 +320,10 @@
                         <img src="images/testflight-icon.webp" alt="iOS TestFlight" class="btn-icon">
                         Join iOS TestFlight
                     </button>
-                    <button class="btn-secondary btn-large">🤖 Request Google Play Access</button>
+                    <button class="btn-secondary btn-large">
+                        <img src="images/getitongoogleplay-icon.svg" alt="Google Play Store" class="btn-icon">
+                        Request Google Play Access
+                    </button>
                 </div>
                 <p class="cta-subtext">Free during early access • Limited spots available</p>
             </div>
@@ -494,7 +497,7 @@ Best regards`;
                 androidBtn.disabled = true;
                 
                 setTimeout(() => {
-                    androidBtn.innerHTML = '🤖 Request Android Access';
+                    androidBtn.innerHTML = '<img src="images/getitongoogleplay-icon.svg" alt="Google Play Store" class="btn-icon">Request Google Play Access';
                     androidBtn.disabled = false;
                 }, 3000);
             }
