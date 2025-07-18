@@ -21,12 +21,12 @@
     <nav class="nav">
         <div class="nav-container">
             <div class="nav-logo">Most Important Thing</div>
-            <div class="nav-links">
+            <div class="nav-links desktop-only">
                 <a href="#features">Features</a>
                 <a href="#testing">Beta Testing</a>
                 <a href="#testimonials">Success Stories</a>
             </div>
-            <button class="btn-primary">Try Free Beta</button>
+            <button class="btn-primary desktop-only">Try Free Beta</button>
         </div>
     </nav>
 
@@ -39,17 +39,28 @@
                     <span class="beta-text">🧪 Now in Beta Testing</span>
                 </div>
                 <h1 class="hero-title">Transform Your Life<br>One Day at a Time</h1>
-                <p class="hero-subtitle">Join our exclusive beta and be among the first to experience the app that helps you focus on what truly matters. <strong>Free during testing!</strong></p>
-                <div class="hero-cta">
-                    <button class="btn-primary btn-large">🍎 Join TestFlight Beta</button>
-                    <button class="btn-secondary">🤖 Request Android Access</button>
+                <p class="hero-subtitle">Focus on what truly matters. Join 50+ beta testers already seeing results.</p>
+                
+                <!-- Mobile Social Proof -->
+                <div class="mobile-social-proof">
+                    <div class="tester-count">👥 50+ beta testers</div>
+                    <div class="rating">★★★★★ 4.9/5</div>
+                    <div class="testimonial-preview">"Already seeing results in just 3 days!"</div>
                 </div>
-                <div class="hero-proof">
-                    <span>✨ Free beta testing • Early access • Shape the future</span>
-                    <div class="rating">★★★★★ 4.9/5 from testers</div>
+                
+                <div class="hero-cta">
+                    <button class="btn-primary btn-large" onclick="showPlatformSelection()">🚀 Get Free Beta Access</button>
+                </div>
+                
+                <!-- Urgency Banner -->
+                <div class="urgency-banner">
+                    <span class="pulse">⚡</span>
+                    <span>Only 47 spots left in beta</span>
                 </div>
             </div>
-            <div class="hero-visual animate-on-scroll">
+            
+            <!-- Phone Mockup - Moved below content on mobile -->
+            <div class="hero-visual animate-on-scroll mobile-mockup">
                 <div class="app-mockup">
                     <div class="phone-frame">
                         <div class="app-screen-container">
@@ -86,6 +97,43 @@
             </div>
         </div>
     </section>
+
+    <!-- Platform Selection Modal -->
+    <div id="platform-selection" class="platform-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Choose Your Platform</h3>
+                <button class="modal-close" onclick="hidePlatformSelection()">×</button>
+            </div>
+            <div class="platform-options">
+                <button class="platform-option ios-option" onclick="joinTestFlight()">
+                    <div class="platform-icon">🍎</div>
+                    <div class="platform-info">
+                        <h4>iOS TestFlight</h4>
+                        <p>Instant access • Automatic updates</p>
+                    </div>
+                </button>
+                <button class="platform-option android-option" onclick="requestAndroidAccess()">
+                    <div class="platform-icon">🤖</div>
+                    <div class="platform-info">
+                        <h4>Android Beta</h4>
+                        <p>Personal invitation • Direct support</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta">
+        <div class="sticky-cta-content">
+            <div class="sticky-cta-text">
+                <span class="sticky-title">Get Free Beta Access</span>
+                <span class="sticky-subtitle">Only 47 spots left</span>
+            </div>
+            <button class="btn-primary btn-large" onclick="showPlatformSelection()">Join Now</button>
+        </div>
+    </div>
 
     <!-- Beta Testing Section -->
     <section id="testing" class="beta-testing">
@@ -297,32 +345,98 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/animations.js"></script>
     <script>
-        // TestFlight button functionality
-        document.querySelector('.testflight-btn').addEventListener('click', function() {
+        // Platform Selection Modal Functions
+        function showPlatformSelection() {
+            document.getElementById('platform-selection').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hidePlatformSelection() {
+            document.getElementById('platform-selection').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('platform-selection').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hidePlatformSelection();
+            }
+        });
+        
+        // Platform selection functions
+        function joinTestFlight() {
             // TODO: Replace with your actual TestFlight link
             window.open('https://testflight.apple.com/join/your-testflight-link', '_blank');
-        });
+            hidePlatformSelection();
+        }
+        
+        function requestAndroidAccess() {
+            hidePlatformSelection();
+            // Scroll to Android section or show email input
+            const androidSection = document.querySelector('.android-option');
+            if (androidSection) {
+                androidSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
+        // Sticky CTA visibility
+        function updateStickyCTA() {
+            const stickyCTA = document.querySelector('.sticky-cta');
+            const heroSection = document.querySelector('.hero');
+            
+            if (window.innerWidth <= 768) {
+                const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                const scrollPosition = window.pageYOffset + window.innerHeight;
+                
+                if (scrollPosition > heroBottom) {
+                    stickyCTA.style.display = 'block';
+                } else {
+                    stickyCTA.style.display = 'none';
+                }
+            }
+        }
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', updateStickyCTA);
+        window.addEventListener('resize', updateStickyCTA);
+        
+        // Initialize sticky CTA
+        updateStickyCTA();
+        
+        // TestFlight button functionality (legacy)
+        const testflightBtn = document.querySelector('.testflight-btn');
+        if (testflightBtn) {
+            testflightBtn.addEventListener('click', function() {
+                // TODO: Replace with your actual TestFlight link
+                window.open('https://testflight.apple.com/join/your-testflight-link', '_blank');
+            });
+        }
 
         // Additional CTA buttons
         document.querySelectorAll('.final-cta .btn-primary').forEach(btn => {
             btn.addEventListener('click', function() {
-                // Replace with your actual TestFlight link
-                window.open('https://testflight.apple.com/join/your-testflight-link', '_blank');
+                showPlatformSelection();
             });
         });
 
         document.querySelectorAll('.final-cta .btn-secondary, .hero-cta .btn-secondary').forEach(btn => {
             btn.addEventListener('click', function() {
-                document.getElementById('android-email').focus();
-                document.getElementById('android-email').scrollIntoView({ behavior: 'smooth' });
+                const androidEmail = document.getElementById('android-email');
+                if (androidEmail) {
+                    androidEmail.focus();
+                    androidEmail.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
 
         // Android access request function
         function requestAndroidAccess() {
-            const email = document.getElementById('android-email').value;
+            const email = document.getElementById('android-email');
+            if (!email) return;
             
-            if (!email || !validateEmail(email)) {
+            const emailValue = email.value;
+            
+            if (!emailValue || !validateEmail(emailValue)) {
                 alert('Please enter a valid email address');
                 return;
             }
@@ -333,7 +447,7 @@
 
 I'd like to request access to the Android beta testing for the Most Important Thing app.
 
-My email: ${email}
+My email: ${emailValue}
 
 Looking forward to trying the app and providing feedback!
 
@@ -344,13 +458,39 @@ Best regards`;
             window.location.href = mailtoLink;
             
             // Show confirmation
-            document.querySelector('.android-btn').innerHTML = '✅ Request Sent!';
-            document.querySelector('.android-btn').disabled = true;
+            const androidBtn = document.querySelector('.android-btn');
+            if (androidBtn) {
+                androidBtn.innerHTML = '✅ Request Sent!';
+                androidBtn.disabled = true;
+                
+                setTimeout(() => {
+                    androidBtn.innerHTML = '🤖 Request Android Access';
+                    androidBtn.disabled = false;
+                }, 3000);
+            }
+        }
+        
+        // Email validation function
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        // Mobile-specific optimizations
+        if (window.innerWidth <= 768) {
+            // Reduce animations on mobile for better performance
+            document.body.style.setProperty('--animation-duration', '0.3s');
             
-            setTimeout(() => {
-                document.querySelector('.android-btn').innerHTML = '🤖 Request Android Access';
-                document.querySelector('.android-btn').disabled = false;
-            }, 3000);
+            // Add touch-friendly interactions
+            document.querySelectorAll('.btn, .platform-option').forEach(element => {
+                element.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                element.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                });
+            });
         }
     </script>
 </body>

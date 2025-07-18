@@ -108,6 +108,21 @@
     gap: var(--spacing-lg);
 }
 
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .feature-card {
+        padding: var(--spacing-md);
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+}
+
 .feature-card {
     text-align: center;
 }
@@ -769,6 +784,35 @@ blockquote {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+    .testing-options {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .testing-card {
+        padding: var(--spacing-md);
+    }
+    
+    .email-signup {
+        flex-direction: column;
+    }
+    
+    .email-input {
+        min-width: 100%;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn-large {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 .testing-card {
