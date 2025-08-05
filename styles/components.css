@@ -292,12 +292,12 @@ blockquote {
     font-weight: 400;
     margin: 0 0 2rem 0;
     font-style: italic;
-    color: white;
+    color: #1a1a1a;
 }
 
 blockquote p {
     margin-bottom: 1.5rem;
-    color: white;
+    color: #1a1a1a;
 }
 
 blockquote p:last-child {
@@ -315,12 +315,12 @@ blockquote p:last-child {
 
 .author-name {
     font-weight: 600;
-    color: white;
+    color: #4f46e5;
     font-size: 1.1rem;
 }
 
 .author-title {
-    color: rgba(255, 255, 255, 0.8);
+    color: #6b7280;
     font-size: 0.9rem;
     margin-top: 0.25rem;
 }
