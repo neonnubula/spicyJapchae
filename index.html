@@ -622,14 +622,81 @@
         
         /* Testimonials Section Styling */
         .testimonials {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, var(--primary-gradient), var(--secondary-gradient));
             position: relative;
+            overflow: hidden;
+            padding: var(--space-4xl) var(--space-lg);
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(1px);
         }
         
         .founder-testimonial {
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-content {
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .quote-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-lg);
+        }
+        
+        blockquote {
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 4vw, 1.5rem);
+            font-weight: 400;
+            font-style: italic;
+            color: white !important;
+            margin-bottom: var(--space-lg);
+            line-height: 1.4;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+        
+        .author-info {
+            text-align: center;
+        }
+        
+        .author-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: white !important;
+            font-size: 1.1rem;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .author-title {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-size: 0.9rem;
+        }
+        
+        .author-avatar img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            box-shadow: var(--shadow-medium);
         }
         
         .story-quote {
@@ -816,20 +883,20 @@
                 <h1 class="hero-title">Transform Your Life<span style="display: block;">One Day at a Time</span></h1>
                 <p class="hero-subtitle">Focus on what truly matters. Achieve your most important daily goal and watch your dreams become reality.</p>
                 
-                <div class="platform-options">
-                    <button class="platform-option ios-option" onclick="joinTestFlight()">
-                        <img src="images/testflight-icon.webp" alt="iOS TestFlight" class="platform-icon-img">
-                        <div class="platform-info">
-                            <h4>iOS TestFlight</h4>
-                            <p>Beta testing • Instant access</p>
-                        </div>
-                    </button>
-                    <a href="https://play.google.com/store/apps/details?id=ai.strawberry.japchae" class="platform-option android-option google-play-main" target="_blank">
-                        <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="google-play-badge">
-                    </a>
-                </div>
+                    <div class="platform-options">
+                        <button class="platform-option ios-option" onclick="joinTestFlight()">
+                            <img src="images/testflight-icon.webp" alt="iOS TestFlight" class="platform-icon-img">
+                            <div class="platform-info">
+                                <h4>iOS TestFlight</h4>
+                                <p>Beta testing • Instant access</p>
+                            </div>
+                        </button>
+                        <a href="https://play.google.com/store/apps/details?id=ai.strawberry.japchae" class="platform-option android-option google-play-main" target="_blank">
+                            <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="google-play-badge">
+                        </a>
+                    </div>
                 
-                <button class="btn-secondary" onclick="scrollToFeatures()">See Features</button>
+                    <button class="btn-secondary" onclick="scrollToFeatures()">See Features</button>
                 
                 <div class="hero-proof">
                     <span>Join users already transforming their lives</span>
@@ -842,8 +909,8 @@
                         <div class="app-screen-container">
                             <img src="images/darkmode-home.png" alt="Most Important Thing App - Dark Mode" class="app-screenshot active" id="dark-mode">
                             <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
-                        </div>
-                    </div>
+                                </div>
+                                    </div>
                 </div>
             </div>
         </div>
@@ -852,46 +919,46 @@
     <!-- Transformation Section -->
     <section class="section transformation">
         <div class="container">
-            <h2 class="section-title">Your Journey: From Scattered to Focused</h2>
-            <div class="journey-timeline">
-                <div class="timeline-item card">
+                <h2 class="section-title">Your Journey: From Scattered to Focused</h2>
+                <div class="journey-timeline">
+                    <div class="timeline-item card">
                     <div class="timeline-marker">
                         <span>1</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Day 1: Crystal Clear Clarity</h3>
-                        <p>You wake up knowing exactly what matters most today. No more decision fatigue or overwhelm.</p>
-                        <div class="timeline-visual">🌅</div>
+                        <div class="timeline-content">
+                            <h3>Day 1: Crystal Clear Clarity</h3>
+                            <p>You wake up knowing exactly what matters most today. No more decision fatigue or overwhelm.</p>
+                            <div class="timeline-visual">🌅</div>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item card">
+                    <div class="timeline-item card">
                     <div class="timeline-marker">
                         <span>7</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Week 1: Momentum Building</h3>
-                        <p>You've completed 7 important tasks. You can feel the momentum building and see real progress.</p>
-                        <div class="timeline-visual">🚀</div>
+                        <div class="timeline-content">
+                            <h3>Week 1: Momentum Building</h3>
+                            <p>You've completed 7 important tasks. You can feel the momentum building and see real progress.</p>
+                            <div class="timeline-visual">🚀</div>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item card">
+                    <div class="timeline-item card">
                     <div class="timeline-marker">
                         <span>30</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Month 1: Visible Progress</h3>
-                        <p>Your goals aren't dreams anymore—they're projects with clear, measurable progress.</p>
-                        <div class="timeline-visual">📈</div>
+                        <div class="timeline-content">
+                            <h3>Month 1: Visible Progress</h3>
+                            <p>Your goals aren't dreams anymore—they're projects with clear, measurable progress.</p>
+                            <div class="timeline-visual">📈</div>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item card">
+                    <div class="timeline-item card">
                     <div class="timeline-marker">
                         <span>365</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Year 1: Life Transformed</h3>
-                        <p>You look back amazed at what focused daily action created. Your life is unrecognizable in the best way.</p>
-                        <div class="timeline-visual">🏆</div>
+                        <div class="timeline-content">
+                            <h3>Year 1: Life Transformed</h3>
+                            <p>You look back amazed at what focused daily action created. Your life is unrecognizable in the best way.</p>
+                            <div class="timeline-visual">🏆</div>
                     </div>
                 </div>
             </div>
@@ -901,29 +968,29 @@
     <!-- Solution Section -->
     <section id="features" class="section solution">
         <div class="container">
-            <h2 class="section-title">One Goal. One Day. One Life Changed.</h2>
-            <p class="section-subtitle">Stop the chaos. Start the transformation. Focus on the single most important thing that moves you closer to your dreams.</p>
-            
+                <h2 class="section-title">One Goal. One Day. One Life Changed.</h2>
+                <p class="section-subtitle">Stop the chaos. Start the transformation. Focus on the single most important thing that moves you closer to your dreams.</p>
+                
             <div class="features-grid grid-4">
-                <div class="feature-card card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Daily Priority Selection</h3>
-                    <p>Each morning, choose the ONE most important task that will move you closer to your long-term goal. No more scattered priorities.</p>
-                </div>
-                <div class="feature-card card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Progress Tracking</h3>
-                    <p>Watch your progress unfold in real-time. See how each day's focus compounds into meaningful transformation.</p>
-                </div>
-                <div class="feature-card card">
-                    <div class="feature-icon">🔗</div>
-                    <h3>Habit Stacking</h3>
-                    <p>Build unstoppable momentum by connecting your daily focus to your existing habits and routines.</p>
-                </div>
-                <div class="feature-card card">
-                    <div class="feature-icon">💡</div>
-                    <h3>Achievement Insights</h3>
-                    <p>Understand your patterns, celebrate your wins, and optimize your approach for even better results.</p>
+                    <div class="feature-card card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Daily Priority Selection</h3>
+                        <p>Each morning, choose the ONE most important task that will move you closer to your long-term goal. No more scattered priorities.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Progress Tracking</h3>
+                        <p>Watch your progress unfold in real-time. See how each day's focus compounds into meaningful transformation.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon">🔗</div>
+                        <h3>Habit Stacking</h3>
+                        <p>Build unstoppable momentum by connecting your daily focus to your existing habits and routines.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon">💡</div>
+                        <h3>Achievement Insights</h3>
+                        <p>Understand your patterns, celebrate your wins, and optimize your approach for even better results.</p>
                 </div>
             </div>
         </div>
@@ -1002,7 +1069,7 @@
         <div class="container">
             <h2 class="section-title animate-on-scroll">Frequently Asked Questions</h2>
             <div class="faq-grid animate-on-scroll">
-                <div class="faq-item card">
+                    <div class="faq-item card">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>How is this different from other productivity apps?</span>
                         <span class="faq-icon">+</span>
@@ -1012,7 +1079,7 @@
                     </div>
                 </div>
                 
-                <div class="faq-item card">
+                    <div class="faq-item card">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>What if I have multiple important tasks?</span>
                         <span class="faq-icon">+</span>
@@ -1022,7 +1089,7 @@
                     </div>
                 </div>
                 
-                <div class="faq-item card">
+                    <div class="faq-item card">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>Will this work for my specific goals?</span>
                         <span class="faq-icon">+</span>
@@ -1032,7 +1099,7 @@
                     </div>
                 </div>
                 
-                <div class="faq-item card">
+                    <div class="faq-item card">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>Is there a free version?</span>
                         <span class="faq-icon">+</span>
@@ -1040,9 +1107,9 @@
                     <div class="faq-answer">
                         <p>We focus on creating incredible value rather than freemium limitations. The app is affordably priced for your region to ensure everyone can access this life-changing system. Think of it as an investment in your future self—far less than a coffee a month for a tool that could transform your entire life trajectory.</p>
                     </div>
-                </div>
-                
-                <div class="faq-item card">
+                    </div>
+
+                    <div class="faq-item card">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>What if I miss a day?</span>
                         <span class="faq-icon">+</span>
@@ -1111,4 +1178,4 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/animations.js"></script>
 </body>
-</html>
+</html> 
