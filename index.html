@@ -661,7 +661,7 @@
             font-size: clamp(1.25rem, 4vw, 1.5rem);
             font-weight: 400;
             font-style: italic;
-            color: white !important;
+            color: #1a1a1a !important;
             margin-bottom: var(--space-lg);
             line-height: 1.4;
         }
@@ -681,13 +681,13 @@
         .author-name {
             font-family: var(--font-display);
             font-weight: 600;
-            color: white !important;
+            color: #1a1a1a !important;
             font-size: 1.1rem;
             margin-bottom: var(--space-xs);
         }
         
         .author-title {
-            color: rgba(255, 255, 255, 0.8) !important;
+            color: #6b7280 !important;
             font-size: 0.9rem;
         }
         
@@ -697,6 +697,35 @@
             border-radius: 50%;
             border: 3px solid rgba(255, 255, 255, 0.8);
             box-shadow: var(--shadow-medium);
+        }
+        
+        /* Testimonial Proof Section */
+        .testimonial-proof {
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .proof-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-lg);
+            text-align: center;
+        }
+        
+        .metric-number {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a1a !important;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .metric-label {
+            font-size: 0.875rem;
+            color: #6b7280 !important;
+            font-weight: 500;
         }
         
         .story-quote {
