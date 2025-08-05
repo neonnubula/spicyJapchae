@@ -15,8 +15,518 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/animations.css">
+    
+    <!-- Premium Mobile-First Styles -->
+    <style>
+        /* Apple-inspired Premium Design System */
+        :root {
+            /* Premium Color Palette */
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --warm-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            --cool-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            --glass-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+            
+            /* Premium Typography Scale */
+            --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            --font-text: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+            
+            /* Sophisticated Spacing System */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            --space-4xl: 6rem;
+            
+            /* Premium Shadows */
+            --shadow-soft: 0 2px 60px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --shadow-hard: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --shadow-floating: 0 30px 80px rgba(0, 0, 0, 0.08);
+            
+            /* Premium Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --radius-2xl: 48px;
+        }
+        
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            font-family: var(--font-text);
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafbfc;
+            overflow-x: hidden;
+        }
+        
+        /* Premium Background with Animated Shapes */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50vh;
+            left: -50vw;
+            width: 200vw;
+            height: 200vh;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 40%, rgba(245, 87, 108, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(79, 172, 254, 0.06) 0%, transparent 50%),
+                linear-gradient(135deg, #fafbfc 0%, #f8f9fa 100%);
+            z-index: -2;
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+        
+        @keyframes backgroundShift {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(1deg) scale(1.02); }
+        }
+        
+        /* Floating Gradient Shapes */
+        .shape-1, .shape-2, .shape-3, .shape-4 {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: -1;
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            background: var(--primary-gradient);
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            background: var(--warm-gradient);
+            bottom: 20%;
+            left: 5%;
+            animation-delay: 3s;
+        }
+        
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            background: var(--success-gradient);
+            top: 60%;
+            right: 20%;
+            animation-delay: 6s;
+        }
+        
+        .shape-4 {
+            width: 120px;
+            height: 120px;
+            background: var(--cool-gradient);
+            top: 30%;
+            left: 15%;
+            animation-delay: 9s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-20px) scale(1.1); opacity: 0.5; }
+        }
+        
+        /* Premium Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: none;
+            gap: var(--space-lg);
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #6b7280;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #4f46e5;
+        }
+        
+        .nav-google-play {
+            transition: transform 0.2s ease;
+        }
+        
+        .nav-google-play:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-google-play-icon {
+            height: 32px;
+            width: auto;
+        }
+        
+        /* Hero Section - Mobile First */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: var(--space-4xl) var(--space-lg) var(--space-3xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .hero-content {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--space-lg);
+            background: linear-gradient(135deg, #1a1a1a 0%, #4f46e5 50%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.125rem, 4vw, 1.25rem);
+            color: #6b7280;
+            margin-bottom: var(--space-2xl);
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Platform Options - Premium Design */
+        .platform-options {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .platform-option {
+            display: flex;
+            align-items: center;
+            padding: var(--space-lg);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--glass-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .platform-option:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-floating);
+            border-color: rgba(79, 70, 229, 0.3);
+        }
+        
+        .platform-option:hover::before {
+            opacity: 1;
+        }
+        
+        .platform-option.google-play-main {
+            background: linear-gradient(135deg, rgba(66, 133, 244, 0.1) 0%, rgba(52, 168, 83, 0.1) 100%);
+            border: 1px solid rgba(66, 133, 244, 0.2);
+        }
+        
+        .platform-option.google-play-main:hover {
+            background: linear-gradient(135deg, rgba(66, 133, 244, 0.15) 0%, rgba(52, 168, 83, 0.15) 100%);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(66, 133, 244, 0.2);
+        }
+        
+        .google-play-badge {
+            height: 60px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .platform-option:hover .google-play-badge {
+            transform: scale(1.05);
+        }
+        
+        .platform-icon-img {
+            height: 48px;
+            width: 48px;
+            margin-right: var(--space-md);
+            border-radius: var(--radius-sm);
+        }
+        
+        .platform-info h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: var(--space-xs);
+            color: #1a1a1a;
+        }
+        
+        .platform-info p {
+            color: #6b7280;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        /* Secondary Button */
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #4f46e5;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        /* Hero Proof */
+        .hero-proof {
+            text-align: center;
+            margin-top: var(--space-xl);
+        }
+        
+        .hero-proof span {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-2xl);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #6b7280;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        /* App Mockup */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            margin-top: var(--space-3xl);
+        }
+        
+        .app-mockup {
+            position: relative;
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            transition: transform 0.6s ease;
+        }
+        
+        .app-mockup:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02);
+        }
+        
+        .phone-frame {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            padding: var(--space-md);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-floating);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 4px;
+            background: #666;
+            border-radius: 2px;
+        }
+        
+        .app-screen-container {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 9/19.5;
+            width: 280px;
+        }
+        
+        .app-screenshot {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        
+        .theme-toggle {
+            position: absolute;
+            bottom: var(--space-md);
+            right: var(--space-md);
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+        
+        /* Desktop Responsive */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+            
+            .nav-google-play-icon {
+                height: 40px;
+            }
+            
+            .hero {
+                padding: var(--space-4xl) var(--space-lg);
+            }
+            
+            .hero .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-4xl);
+                align-items: center;
+            }
+            
+            .hero-content {
+                text-align: left;
+                margin-bottom: 0;
+            }
+            
+            .platform-options {
+                flex-direction: column;
+                max-width: none;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .hero-proof {
+                text-align: left;
+                margin-top: var(--space-xl);
+            }
+            
+            .app-screen-container {
+                width: 320px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .platform-options {
+                flex-direction: row;
+                gap: var(--space-md);
+            }
+            
+            .platform-option {
+                flex: 1;
+            }
+            
+            .app-screen-container {
+                width: 360px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Floating Gradient Shapes -->
+    <div class="shape-1"></div>
+    <div class="shape-2"></div>
+    <div class="shape-3"></div>
+    <div class="shape-4"></div>
+    
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
@@ -97,42 +607,48 @@
     </section>
 
     <!-- Transformation Section -->
-    <section class="transformation">
+    <section class="section transformation">
         <div class="container">
-            <div class="transformation-content animate-on-scroll">
-                <h2 class="section-title">Your Journey: From Scattered to Focused</h2>
-                <div class="journey-timeline">
-                    <div class="timeline-item card">
-                        <div class="timeline-marker">1</div>
-                        <div class="timeline-content">
-                            <h3>Day 1: Crystal Clear Clarity</h3>
-                            <p>You wake up knowing exactly what matters most today. No more decision fatigue or overwhelm.</p>
-                            <div class="timeline-visual">🌅</div>
-                        </div>
+            <h2 class="section-title">Your Journey: From Scattered to Focused</h2>
+            <div class="journey-timeline">
+                <div class="timeline-item card">
+                    <div class="timeline-marker">
+                        <span>1</span>
                     </div>
-                    <div class="timeline-item card">
-                        <div class="timeline-marker">7</div>
-                        <div class="timeline-content">
-                            <h3>Week 1: Momentum Building</h3>
-                            <p>You've completed 7 important tasks. You can feel the momentum building and see real progress.</p>
-                            <div class="timeline-visual">🚀</div>
-                        </div>
+                    <div class="timeline-content">
+                        <h3>Day 1: Crystal Clear Clarity</h3>
+                        <p>You wake up knowing exactly what matters most today. No more decision fatigue or overwhelm.</p>
+                        <div class="timeline-visual">🌅</div>
                     </div>
-                    <div class="timeline-item card">
-                        <div class="timeline-marker">30</div>
-                        <div class="timeline-content">
-                            <h3>Month 1: Visible Progress</h3>
-                            <p>Your goals aren't dreams anymore—they're projects with clear, measurable progress.</p>
-                            <div class="timeline-visual">📈</div>
-                        </div>
+                </div>
+                <div class="timeline-item card">
+                    <div class="timeline-marker">
+                        <span>7</span>
                     </div>
-                    <div class="timeline-item card">
-                        <div class="timeline-marker">365</div>
-                        <div class="timeline-content">
-                            <h3>Year 1: Life Transformed</h3>
-                            <p>You look back amazed at what focused daily action created. Your life is unrecognizable in the best way.</p>
-                            <div class="timeline-visual">🏆</div>
-                        </div>
+                    <div class="timeline-content">
+                        <h3>Week 1: Momentum Building</h3>
+                        <p>You've completed 7 important tasks. You can feel the momentum building and see real progress.</p>
+                        <div class="timeline-visual">🚀</div>
+                    </div>
+                </div>
+                <div class="timeline-item card">
+                    <div class="timeline-marker">
+                        <span>30</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Month 1: Visible Progress</h3>
+                        <p>Your goals aren't dreams anymore—they're projects with clear, measurable progress.</p>
+                        <div class="timeline-visual">📈</div>
+                    </div>
+                </div>
+                <div class="timeline-item card">
+                    <div class="timeline-marker">
+                        <span>365</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Year 1: Life Transformed</h3>
+                        <p>You look back amazed at what focused daily action created. Your life is unrecognizable in the best way.</p>
+                        <div class="timeline-visual">🏆</div>
                     </div>
                 </div>
             </div>
@@ -140,33 +656,31 @@
     </section>
 
     <!-- Solution Section -->
-    <section id="features" class="solution">
+    <section id="features" class="section solution">
         <div class="container">
-            <div class="solution-content animate-on-scroll">
-                <h2 class="section-title">One Goal. One Day. One Life Changed.</h2>
-                <p class="section-subtitle">Stop the chaos. Start the transformation. Focus on the single most important thing that moves you closer to your dreams.</p>
-                
-                <div class="features-grid">
-                    <div class="feature-card card">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Daily Priority Selection</h3>
-                        <p>Each morning, choose the ONE most important task that will move you closer to your long-term goal. No more scattered priorities.</p>
-                    </div>
-                    <div class="feature-card card">
-                        <div class="feature-icon">📊</div>
-                        <h3>Progress Tracking</h3>
-                        <p>Watch your progress unfold in real-time. See how each day's focus compounds into meaningful transformation.</p>
-                    </div>
-                    <div class="feature-card card">
-                        <div class="feature-icon">🔗</div>
-                        <h3>Habit Stacking</h3>
-                        <p>Build unstoppable momentum by connecting your daily focus to your existing habits and routines.</p>
-                    </div>
-                    <div class="feature-card card">
-                        <div class="feature-icon">💡</div>
-                        <h3>Achievement Insights</h3>
-                        <p>Understand your patterns, celebrate your wins, and optimize your approach for even better results.</p>
-                    </div>
+            <h2 class="section-title">One Goal. One Day. One Life Changed.</h2>
+            <p class="section-subtitle">Stop the chaos. Start the transformation. Focus on the single most important thing that moves you closer to your dreams.</p>
+            
+            <div class="features-grid grid-4">
+                <div class="feature-card card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Daily Priority Selection</h3>
+                    <p>Each morning, choose the ONE most important task that will move you closer to your long-term goal. No more scattered priorities.</p>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Watch your progress unfold in real-time. See how each day's focus compounds into meaningful transformation.</p>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Habit Stacking</h3>
+                    <p>Build unstoppable momentum by connecting your daily focus to your existing habits and routines.</p>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Achievement Insights</h3>
+                    <p>Understand your patterns, celebrate your wins, and optimize your approach for even better results.</p>
                 </div>
             </div>
         </div>
@@ -454,66 +968,217 @@
             color: #3498db;
         }
         
-        /* Google Play Icon Styling */
-        .nav-google-play {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            transition: transform 0.2s ease;
+        /* Section Styling */
+        .section {
+            padding: var(--space-4xl) var(--space-lg);
+            position: relative;
         }
         
-        .nav-google-play:hover {
-            transform: scale(1.05);
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            background: linear-gradient(135deg, #1a1a1a 0%, #4f46e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.01em;
         }
         
-        .nav-google-play-icon {
-            height: 40px;
-            width: auto;
+        .section-subtitle {
+            font-size: clamp(1rem, 3vw, 1.125rem);
+            color: #6b7280;
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .google-play-badge {
-            height: 120px;
-            width: auto;
-            transition: transform 0.2s ease;
+        /* Card System */
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .google-play-badge:hover {
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-floating);
+        }
+        
+        /* Grid Systems */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+        
+        @media (min-width: 640px) {
+            .grid-2 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (min-width: 1024px) {
+            .grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .grid-4 { grid-template-columns: repeat(4, 1fr); }
+        }
+        
+        /* Download Button Styling */
+        .google-play-download {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .google-play-download:hover {
             transform: scale(1.05);
         }
         
         .google-play-badge-large {
-            height: 80px;
+            height: 56px;
             width: auto;
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
         }
         
-        .google-play-badge-large:hover {
-            transform: scale(1.05);
+        @media (min-width: 768px) {
+            .google-play-badge-large {
+                height: 64px;
+            }
         }
         
-        .google-play-download {
-            display: inline-block;
-            text-decoration: none;
-            margin: 10px 0;
+        /* Journey Timeline Premium Styling */
+        .journey-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        .google-play-main {
-            padding: 20px;
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 60px;
+            bottom: 60px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-gradient), var(--success-gradient));
+            border-radius: 1px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: var(--space-lg);
+            position: relative;
+        }
+        
+        .timeline-marker {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
             justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.125rem;
+            box-shadow: var(--shadow-medium);
+            z-index: 1;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding-bottom: var(--space-lg);
+        }
+        
+        .timeline-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: #1a1a1a;
+        }
+        
+        .timeline-content p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+        }
+        
+        .timeline-visual {
+            font-size: 2rem;
+        }
+        
+        /* Features Grid Premium Styling */
+        .feature-card {
             text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        /* Platform specific styling */
-        .platform-option.google-play-main {
-            min-width: 300px;
-            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
-            border: none;
-            box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-floating);
         }
         
-        .platform-option.google-play-main:hover {
-            box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
-            transform: translateY(-3px);
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-lg);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        }
+        
+        .feature-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: #1a1a1a;
+        }
+        
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        @media (min-width: 768px) {
+            .journey-timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .timeline-item:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content {
+                text-align: right;
+            }
+            
+            .timeline-marker {
+                position: relative;
+                z-index: 2;
+            }
         }
     </style>
 </body>
