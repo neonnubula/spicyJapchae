@@ -170,9 +170,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: var(--space-md);
         }
         
         .nav-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .logo-main {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 1.25rem;
@@ -180,12 +187,26 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1;
+        }
+        
+        .logo-subtitle {
+            font-family: var(--font-text);
+            font-size: 0.625rem;
+            font-weight: 500;
+            color: #6b7280;
+            line-height: 1;
+            margin-top: 2px;
         }
         
         /* Mobile-first responsive logo text */
         @media (max-width: 640px) {
-            .nav-logo {
+            .logo-main {
                 font-size: 1rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.5rem;
             }
         }
         
@@ -308,7 +329,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: calc(var(--space-4xl) + 80px) var(--space-lg) var(--space-3xl);
+            padding: calc(var(--space-4xl) + 120px) var(--space-lg) var(--space-3xl);
             position: relative;
             overflow: hidden;
         }
@@ -1060,6 +1081,7 @@
         @media (max-width: 768px) {
             .nav-container {
                 padding: var(--space-sm) var(--space-md);
+                gap: var(--space-sm);
             }
             
             .hamburger {
@@ -1071,7 +1093,11 @@
             }
             
             .hero {
-                padding: var(--space-3xl) var(--space-md);
+                padding: calc(var(--space-4xl) + 140px) var(--space-md) var(--space-2xl);
+            }
+            
+            .nav-download-options {
+                gap: var(--space-xs);
             }
             
             .container {
@@ -1140,7 +1166,10 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <div class="nav-logo">MIT</div>
+            <div class="nav-logo">
+                <span class="logo-main">MIT</span>
+                <span class="logo-subtitle">Most Important Thing</span>
+            </div>
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#testimonials">Reviews</a>
