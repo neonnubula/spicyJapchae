@@ -212,6 +212,21 @@
             transform: scale(1.05);
         }
         
+        /* Unified store badge styling */
+        .store-badges {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .store-badge {
+            height: 60px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+        .nav .store-badge { height: 40px; }
+        
         .nav-google-play-icon,
         .nav-app-store-icon {
             height: 40px;
@@ -921,10 +936,10 @@
             </div>
             <div class="nav-download-options">
                 <a href="https://apps.apple.com/us/app/mit-daily-focus-progress/id6747995505" class="nav-app-store" target="_blank">
-                    <img src="images/appstore-icon.svg" alt="Download on App Store" class="nav-app-store-icon">
+                    <img src="images/appstore-icon.svg" alt="Download on the App Store" class="store-badge">
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=ai.strawberry.japchae" class="nav-google-play" target="_blank">
-                    <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="nav-google-play-icon">
+                    <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="store-badge">
                 </a>
             </div>
         </div>
@@ -937,12 +952,12 @@
                 <h1 class="hero-title">Transform Your Life<span style="display: block;">One Day at a Time</span></h1>
                 <p class="hero-subtitle">Focus on what truly matters. Achieve your most important daily goal and watch your dreams become reality.</p>
                 
-                    <div class="platform-options">
-                        <a href="https://apps.apple.com/us/app/mit-daily-focus-progress/id6747995505" class="platform-option ios-option" target="_blank">
-                            <img src="images/appstore-icon.svg" alt="Download on the App Store" class="platform-icon-img">
+                    <div class="store-badges">
+                        <a href="https://apps.apple.com/us/app/mit-daily-focus-progress/id6747995505"  target="_blank">
+                            <img src="images/appstore-icon.svg" alt="Download on the App Store" class="store-badge">
                         </a>
-                        <a href="https://play.google.com/store/apps/details?id=ai.strawberry.japchae" class="platform-option android-option google-play-main" target="_blank">
-                            <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="google-play-badge">
+                        <a href="https://play.google.com/store/apps/details?id=ai.strawberry.japchae"  target="_blank">
+                            <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="store-badge">
                         </a>
                     </div>
                 
@@ -1107,7 +1122,7 @@
                     </div>
                     <p class="user-text">Over 75 real users already seeing amazing results</p>
                     <a href="https://play.google.com/store/apps/details?id=ai.strawberry.japchae" class="google-play-download" target="_blank">
-                        <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="google-play-badge-large">
+                        <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="store-badge">
                     </a>
                 </div>
             </div>
@@ -1191,10 +1206,10 @@
                 
                 <div class="final-download-options">
                     <a href="https://apps.apple.com/us/app/mit-daily-focus-progress/id6747995505" target="_blank" class="btn-cta ios-cta google-play-download">
-                        <img src="images/appstore-icon.svg" alt="Download on the App Store" class="google-play-badge-large">
+                        <img src="images/appstore-icon.svg" alt="Download on the App Store" class="store-badge">
                     </a>
                     <a href="https://play.google.com/store/apps/details?id=ai.strawberry.japchae" class="google-play-download" target="_blank">
-                        <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="google-play-badge-large">
+                        <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="store-badge">
                     </a>
                 </div>
                 
