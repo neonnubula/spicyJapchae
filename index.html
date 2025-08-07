@@ -330,8 +330,10 @@
         }
         
         .platform-icon-img {
-            height: 48px;
-            width: 48px;
+            height: 24px !important;
+            width: 24px !important;
+            max-height: 24px !important;
+            max-width: 24px !important;
             margin-right: var(--space-md);
             border-radius: var(--radius-sm);
         }
@@ -1215,5 +1217,12 @@
     <!-- Scripts -->
     <script src="scripts/main.js"></script>
     <script src="scripts/animations.js"></script>
+    
+    <!-- TestFlight functionality -->
+    <script>
+        function joinTestFlight() {
+            window.open('https://testflight.apple.com/join/ypBr48gz', '_blank');
+        }
+    </script>
 </body>
 </html> 
