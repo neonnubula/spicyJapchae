@@ -22,6 +22,9 @@
         :root {
             /* Premium Color Palette */
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            
+            /* Dynamic header height (fallback) */
+            --header-height: 80px;
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             --warm-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
@@ -327,11 +330,13 @@
         /* Hero Section - Mobile First */
         .hero {
             min-height: 100vh;
+            min-height: 100dvh; /* Dynamic viewport height for modern browsers */
             display: flex;
             align-items: center;
-            padding: calc(var(--space-4xl) + 120px) var(--space-lg) var(--space-3xl);
+            padding: var(--space-lg);
             position: relative;
             overflow: hidden;
+            margin-top: 120px; /* Push content below fixed header */
         }
         
         .hero .container {
@@ -1093,7 +1098,8 @@
             }
             
             .hero {
-                padding: calc(var(--space-4xl) + 140px) var(--space-md) var(--space-2xl);
+                padding: var(--space-md);
+                margin-top: 100px; /* Fallback for older devices */
             }
             
             .nav-download-options {
@@ -1507,6 +1513,28 @@
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
         }
+        
+        // Dynamic header height adjustment
+        function adjustHeroForHeader() {
+            const header = document.querySelector('.nav');
+            const hero = document.querySelector('.hero');
+            
+            if (header && hero) {
+                const headerHeight = header.offsetHeight;
+                hero.style.marginTop = headerHeight + 'px';
+                hero.style.minHeight = `calc(100vh - ${headerHeight}px)`;
+                
+                // For modern browsers with dynamic viewport
+                if (CSS.supports('height', '100dvh')) {
+                    hero.style.minHeight = `calc(100dvh - ${headerHeight}px)`;
+                }
+            }
+        }
+        
+        // Run on load and resize
+        window.addEventListener('load', adjustHeroForHeader);
+        window.addEventListener('resize', adjustHeroForHeader);
+        window.addEventListener('orientationchange', adjustHeroForHeader);
     </script>
 </body>
 </html> 
