@@ -808,8 +808,8 @@ section {
 }
 
 .platform-option .platform-icon-img {
-    width: 24px !important;
-    height: 24px !important;
+    height: 40px !important;
+    width: auto !important;
     max-width: 24px !important;
     max-height: 24px !important;
     border-radius: 6px;
@@ -1126,7 +1126,7 @@ section {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(135deg, #007aff 0%, #0056cc 100%);
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
     color: white;
     border: none;
     border-radius: 12px;
@@ -1137,12 +1137,12 @@ section {
     transition: all 0.3s ease;
     text-decoration: none;
     height: 60px;
-    min-width: 180px;
+    min-width: 200px;
 }
 
 .btn-cta.ios-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .btn-cta.ios-cta img {

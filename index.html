@@ -198,17 +198,29 @@
             color: #4f46e5;
         }
         
-        .nav-google-play {
+        .nav-download-options {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .nav-google-play, .nav-app-store {
             transition: transform 0.2s ease;
         }
         
-        .nav-google-play:hover {
+        .nav-google-play:hover, .nav-app-store:hover {
             transform: scale(1.05);
         }
         
         .nav-google-play-icon {
             height: 32px;
             width: auto;
+        }
+        
+        .nav-app-store-icon {
+            height: 32px;
+            width: 32px;
+            object-fit: contain;
         }
         
         /* Hero Section - Mobile First */
@@ -330,10 +342,10 @@
         }
         
         .platform-icon-img {
-            height: 24px !important;
-            width: 24px !important;
-            max-height: 24px !important;
-            max-width: 24px !important;
+            height: 40px !important;
+            width: auto !important;
+            max-height: 40px !important;
+            max-width: none !important;
             margin-right: var(--space-md);
             border-radius: var(--radius-sm);
         }
@@ -910,9 +922,14 @@
                 <a href="#testimonials">Reviews</a>
                 <a href="#faq">FAQ</a>
             </div>
-            <a href="https://play.google.com/store/apps/details?id=ai.strawberry.japchae" class="nav-google-play" target="_blank">
-                <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="nav-google-play-icon">
-            </a>
+            <div class="nav-download-options">
+                <a href="https://apps.apple.com/us/app/mit-daily-focus-progress/id6747995505" class="nav-app-store" target="_blank">
+                    <img src="images/appstore-icon.svg" alt="Download on App Store" class="nav-app-store-icon">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=ai.strawberry.japchae" class="nav-google-play" target="_blank">
+                    <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="nav-google-play-icon">
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -924,13 +941,9 @@
                 <p class="hero-subtitle">Focus on what truly matters. Achieve your most important daily goal and watch your dreams become reality.</p>
                 
                     <div class="platform-options">
-                        <button class="platform-option ios-option" onclick="joinTestFlight()">
-                            <img src="images/testflight-icon.webp" alt="iOS TestFlight" class="platform-icon-img">
-                            <div class="platform-info">
-                                <h4>iOS TestFlight</h4>
-                                <p>Beta testing • Instant access</p>
-                            </div>
-                        </button>
+                        <a href="https://apps.apple.com/us/app/mit-daily-focus-progress/id6747995505" class="platform-option ios-option" target="_blank">
+                            <img src="images/appstore-icon.svg" alt="Download on the App Store" class="platform-icon-img">
+                        </a>
                         <a href="https://play.google.com/store/apps/details?id=ai.strawberry.japchae" class="platform-option android-option google-play-main" target="_blank">
                             <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="google-play-badge">
                         </a>
@@ -939,7 +952,7 @@
                     <button class="btn-secondary" onclick="scrollToFeatures()">See Features</button>
                 
                 <div class="hero-proof">
-                    <span>Join users already transforming their lives</span>
+                    <span>Join over 75 users already transforming their lives</span>
                 </div>
             </div>
             
@@ -1095,7 +1108,7 @@
                         </div>
                         <span class="more-count">40+ users</span>
                     </div>
-                    <p class="user-text">Real users already seeing amazing results</p>
+                    <p class="user-text">Over 75 real users already seeing amazing results</p>
                     <a href="https://play.google.com/store/apps/details?id=ai.strawberry.japchae" class="google-play-download" target="_blank">
                         <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="google-play-badge-large">
                     </a>
@@ -1177,13 +1190,12 @@
         <div class="container">
             <div class="cta-content animate-on-scroll">
                 <h2 class="cta-title">Ready to Transform Your Life?</h2>
-                <p class="cta-subtitle">Join users who've already started their transformation journey</p>
+                <p class="cta-subtitle">Join over 75 users who've already started their transformation journey</p>
                 
                 <div class="final-download-options">
-                    <button class="btn-cta ios-cta" onclick="joinTestFlight()">
-                        <img src="images/testflight-icon.webp" alt="iOS TestFlight">
-                        <span>iOS TestFlight</span>
-                    </button>
+                    <a href="https://apps.apple.com/us/app/mit-daily-focus-progress/id6747995505" target="_blank" class="btn-cta ios-cta google-play-download">
+                        <img src="images/appstore-icon.svg" alt="Download on the App Store" class="google-play-badge-large">
+                    </a>
                     <a href="https://play.google.com/store/apps/details?id=ai.strawberry.japchae" class="google-play-download" target="_blank">
                         <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="google-play-badge-large">
                     </a>
@@ -1218,10 +1230,10 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/animations.js"></script>
     
-    <!-- TestFlight functionality -->
+    <!-- App Store functionality -->
     <script>
-        function joinTestFlight() {
-            window.open('https://testflight.apple.com/join/ypBr48gz', '_blank');
+        function openAppStore() {
+            window.open('https://apps.apple.com/us/app/mit-daily-focus-progress/id6747995505', '_blank');
         }
     </script>
 </body>
