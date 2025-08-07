@@ -194,6 +194,68 @@
             gap: var(--space-lg);
         }
         
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: var(--space-sm);
+            gap: 4px;
+        }
+        
+        .hamburger span {
+            width: 20px;
+            height: 2px;
+            background: #4f46e5;
+            border-radius: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-xl);
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        .mobile-menu a {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #4f46e5;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .mobile-menu a:hover {
+            color: #6366f1;
+        }
+        
         .nav-links a {
             text-decoration: none;
             color: #6b7280;
@@ -246,7 +308,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: var(--space-4xl) var(--space-lg) var(--space-3xl);
+            padding: calc(var(--space-4xl) + 80px) var(--space-lg) var(--space-3xl);
             position: relative;
             overflow: hidden;
         }
@@ -1000,6 +1062,14 @@
                 padding: var(--space-sm) var(--space-md);
             }
             
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                display: none !important;
+            }
+            
             .hero {
                 padding: var(--space-3xl) var(--space-md);
             }
@@ -1084,8 +1154,22 @@
                     <img src="images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="store-badge">
                 </a>
             </div>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#features" onclick="toggleMobileMenu()">Features</a>
+        <a href="#testimonials" onclick="toggleMobileMenu()">Reviews</a>
+        <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
+        <a href="support.html" onclick="toggleMobileMenu()">Support</a>
+        <a href="privacy.html" onclick="toggleMobileMenu()">Privacy</a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1385,6 +1469,14 @@
     <script>
         function openAppStore() {
             window.open('https://apps.apple.com/us/app/mit-daily-focus-progress/id6747995505', '_blank');
+        }
+        
+        function toggleMobileMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
         }
     </script>
 </body>
