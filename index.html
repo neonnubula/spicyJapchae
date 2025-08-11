@@ -720,6 +720,43 @@
             position: relative;
         }
         
+        /* Demo Section */
+        .demo .section-title {
+            background: linear-gradient(135deg, #1a1a1a 0%, #4f46e5 70%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .demo-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-lg);
+        }
+        .demo-video {
+            width: 100%;
+            max-width: 380px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            padding: var(--space-md);
+        }
+        .demo-video video {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 9/19.5;
+            display: block;
+            border-radius: calc(var(--radius-lg) - 8px);
+            background: #000;
+        }
+        .sound-tip {
+            font-size: 0.875rem;
+            color: #6b7280;
+            text-align: center;
+        }
+        
         .section-title {
             font-family: var(--font-display);
             font-size: clamp(2rem, 6vw, 3rem);
@@ -1177,6 +1214,7 @@
                 <span class="logo-subtitle">Most Important Thing</span>
             </div>
             <div class="nav-links">
+                <a href="#demo">Demo</a>
                 <a href="#features">Features</a>
                 <a href="#testimonials">Reviews</a>
                 <a href="#faq">FAQ</a>
@@ -1199,6 +1237,7 @@
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobileMenu">
+        <a href="#demo" onclick="toggleMobileMenu()">Demo</a>
         <a href="#features" onclick="toggleMobileMenu()">Features</a>
         <a href="#testimonials" onclick="toggleMobileMenu()">Reviews</a>
         <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
@@ -1238,6 +1277,23 @@
                                 </div>
                                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="section demo">
+        <div class="container">
+            <h2 class="section-title">See MIT in Action</h2>
+            <p class="section-subtitle">Here’s Danny explaining the app and how to make daily progress.</p>
+            <div class="demo-content">
+                <div class="demo-video">
+                    <video controls muted playsinline preload="metadata" poster="images/darkmode-home.png">
+                        <source src="images/demowithvoice.mov">
+                        Your browser doesn’t support the video tag.
+                    </video>
+                </div>
+                <p class="sound-tip">Starts muted. Use the speaker control to enable audio.</p>
             </div>
         </div>
     </section>
