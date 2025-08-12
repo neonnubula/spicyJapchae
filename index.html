@@ -321,8 +321,11 @@
             line-height: 1;
             white-space: nowrap;
         }
+        .nav-pill .label-mobile { display: none; }
         @media (max-width: 640px) {
-            .nav-pill { display: none; }
+            .nav-pill { font-size: 0.7rem; padding: 4px 8px; }
+            .nav-pill .label-desktop { display: none; }
+            .nav-pill .label-mobile { display: inline; }
         }
         
         .nav-google-play, .nav-app-store {
@@ -1248,7 +1251,7 @@
                 <a href="#faq">FAQ</a>
             </div>
             <div class="nav-download-options">
-                <span class="nav-pill" aria-label="Free, no signup required">Free · No signup</span>
+                <span class="nav-pill" aria-label="Free, no signup required"><span class="label-desktop">Free · No signup</span><span class="label-mobile">Free</span></span>
                 <a href="https://apps.apple.com/us/app/mit-daily-focus-progress/id6747995505" class="nav-app-store" target="_blank">
                     <img src="images/appstore-icon.svg" alt="Download on the App Store" class="store-badge">
                 </a>
