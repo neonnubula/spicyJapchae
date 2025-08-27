@@ -876,6 +876,43 @@
         }
         .experience-copy h4 { font-family: var(--font-display); font-size: 1.125rem; margin-bottom: var(--space-sm); }
         .experience-copy p { color: #6b7280; }
+
+        /* Vision cards (three-up) */
+        .vision-section .vision-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+        @media (min-width: 768px) {
+            .vision-section .vision-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        .vision-card {
+            border-radius: 20px;
+            padding: clamp(1.25rem, 3vw, 1.75rem);
+            min-height: 200px;
+            color: #fff;
+            box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            overflow: hidden;
+        }
+        .vision-card .vision-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255,255,255,0.18);
+            color: #fff;
+            border-radius: 9999px;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .vision-card h3 { font-family: var(--font-display); font-size: clamp(1.25rem, 3.5vw, 1.5rem); line-height: 1.2; }
+        .vision-card.v1 { background: radial-gradient(120% 120% at 10% 10%, #1f1c4e 0%, #1f1c4e 40%, #5b3fd6 65%, #fb923c 100%); }
+        .vision-card.v2 { background: radial-gradient(120% 120% at 15% 15%, #0f172a 0%, #0f172a 40%, #2563eb 65%, #22c55e 100%); }
+        .vision-card.v3 { background: radial-gradient(120% 120% at 15% 20%, #1f2937 0%, #1f2937 40%, #7c3aed 65%, #06b6d4 100%); }
         
         /* Card System */
         .card {
@@ -1423,6 +1460,30 @@
                 <div class="experience-copy">
                     <h4>Next Generation Focus</h4>
                     <p>Choose one priority, finish it, and watch your momentum build. No signup needed. No ads. Just daily progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Cards (Three) -->
+    <section class="section vision-section">
+        <div class="container">
+            <h2 class="section-title">The Vision</h2>
+            <div class="vision-grid">
+                <div class="vision-card v1">
+                    <span class="vision-badge">The vision</span>
+                    <h3>We build habits that last,
+                    <span style="opacity:0.9">not quick fixes.</span></h3>
+                </div>
+                <div class="vision-card v2">
+                    <span class="vision-badge">The vision</span>
+                    <h3>Clarity over chaos:
+                    <span style="opacity:0.9">one priority, done daily.</span></h3>
+                </div>
+                <div class="vision-card v3">
+                    <span class="vision-badge">The vision</span>
+                    <h3>Momentum, not motivation:
+                    <span style="opacity:0.9">progress compounds.</span></h3>
                 </div>
             </div>
         </div>
